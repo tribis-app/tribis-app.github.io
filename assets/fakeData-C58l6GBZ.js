@@ -1,0 +1,1 @@
+async function e(){throw Error(`Test builds only`)}export{e as generateFakeData};

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-YOCkR2ABS3vP9BVAosH3jWfaKdJeLJwOvOrd4pTQkSc='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#FBF9F6" />
+    <meta name="description" content="Tribis" />
+    <link rel="icon" href="/favicon-64.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Tribis" />
+    <title>Tribis</title>
+    <script>
+      // Paint the last-used theme colors before the app loads (no flash of the wrong theme).
+      // The app writes them in src/themes/apply.ts; this only reads this browser's copy.
+      try {
+        var boot = JSON.parse(localStorage.getItem('tribis.themeBoot') || 'null')
+        if (boot && boot.vars) {
+          for (var k in boot.vars) document.documentElement.style.setProperty(k, boot.vars[k])
+          document.documentElement.style.colorScheme = boot.scheme || 'light'
+          var bg = boot.vars['--c-bg']
+          if (bg) document.querySelector('meta[name="theme-color"]').setAttribute('content', bg)
+        }
+      } catch (e) {}
+    </script>
+    <style>html{background:var(--c-bg,#fbf9f6)}</style>
+    <script type="module" crossorigin src="/assets/index-BqXwPN5R.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/database-C-MSZ2nc.js">
+    <link rel="modulepreload" crossorigin href="/assets/Button-D0VBg22t.js">
+    <link rel="modulepreload" crossorigin href="/assets/X.es-D7SbOzdS.js">
+    <link rel="modulepreload" crossorigin href="/assets/eraRules-COaHMNN_.js">
+    <link rel="modulepreload" crossorigin href="/assets/dexie-react-hooks-GqXwN5eO.js">
+    <link rel="modulepreload" crossorigin href="/assets/Tribi-BIEKA4bl.js">
+    <link rel="modulepreload" crossorigin href="/assets/EmptyState-CftVC5zv.js">
+    <link rel="modulepreload" crossorigin href="/assets/refugioData-DPq3vs9V.js">
+    <link rel="modulepreload" crossorigin href="/assets/SoundToggles-DAabPvdP.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-7y9sWmk5.js">
+    <link rel="modulepreload" crossorigin href="/assets/SearchBar-CNllvWmY.js">
+    <link rel="modulepreload" crossorigin href="/assets/energy-DqS9HZdt.js">
+    <link rel="modulepreload" crossorigin href="/assets/buildFlags-JAqFg0_3.js">
+    <link rel="modulepreload" crossorigin href="/assets/exportImport-C01a0CGA.js">
+    <link rel="stylesheet" crossorigin href="/assets/Button-Dy5qW-7J.css">
+    <link rel="stylesheet" crossorigin href="/assets/Tribi-DR66RhK0.css">
+    <link rel="stylesheet" crossorigin href="/assets/EmptyState-zcVa99_4.css">
+    <link rel="stylesheet" crossorigin href="/assets/refugioData-BYVsnvpp.css">
+    <link rel="stylesheet" crossorigin href="/assets/SoundToggles-LuR-juSd.css">
+    <link rel="stylesheet" crossorigin href="/assets/SearchBar-wZw9yCXm.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-BGIIYmox.css">
+  <link rel="manifest" href="/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
